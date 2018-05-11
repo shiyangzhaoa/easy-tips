@@ -29,7 +29,7 @@
   > 改进，添加扁平化深度控制，默认为1，参考MDN Flatter 参数
 
   ```js
-  const flatten = (arr, { depth } = { depth: 1 })  => arr.reduce((a, b) => {
+  const flatten = (arr, depth = 1)  => arr.reduce((a, b) => {
     let i = 1;
     if (Array.isArray(b) && i < depth) {
       depth++;
@@ -41,4 +41,20 @@
   // [1, 2, 3, [4, 5], 6, 7]
   // flatten([1, [2, 3, [4, 5], 6], 7], { depth: 5 })
   // [1, 2, 3, 4, 5, 6, 7]
+
+
+  // 你也可以这样（逃
+  Array.prototype.flatten = function(depth = 1) {
+    return this.reduce((a, b) => {
+      let i = 1;
+      if (Array.isArray(b) && i < depth) {
+        depth++;
+        return a.concat(flatten(b));
+      }
+      return a.concat(b);
+    }, []);
+  }
+
+  // [1, [2, 3, [4]], 5].flatten();
+  // [1, 2, 3, [4], 5]
   ```
