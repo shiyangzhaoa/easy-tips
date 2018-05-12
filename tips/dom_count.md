@@ -12,3 +12,21 @@ document.querySelectorAll('*').length;
 修的麻袋，那我再问一个，求一个dom节点下的所有子孙节点...
 
 ![rua](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/rua.jpg)
+
+```js
+const getChildren = (node) => {
+  if (!node.children.length) {
+    return [];
+  }
+
+  return Array.from(node.children).reduce((acc, cur) => cur.children.length
+    ? acc.concat(cur, getChildren(cur))
+    : acc.concat(cur)
+    , []);
+}
+```
+
+我们来使用上面的方法求页面的dom节点数:
+
+![biu](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/dom_same.jpg)
+哎嘿嘿，是不是觉得这样就有趣多了～
