@@ -24,8 +24,50 @@ function fibonacci(n) {
 
   return fibonacci(n-1) + fibonacci(n-2);
 }
+
+// fibonacci(10);
+// 55
 ```
 
-乍看起来貌似没什么问题，仔细观察还是会发现问题的，打个比分，求f(10)，f(10) = f(9) + f (8), f(9) = f(8) + f(7);问题暴露出来了，我在求f(10)的时候球了一次f(8)，求f(9)的时候又求了一次f(8)，有图表示是这样的：
+乍看起来貌似没什么问题，仔细观察还是会发现问题的，打个比方，求f(10)，f(10) = f(9) + f (8), f(9) = f(8) + f(7);问题暴露出来了，我在求f(10)的时候球了一次f(8)，求f(9)的时候又求了一次f(8)，有图表示是这样的：
 ![图](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/fibonacci.jpg)
 既然我在求f(9)的时候已经算了一遍f(8)的值，为何还要再在求f(10)的时候再算一遍f(8)，这一看就很不合理。
+
+用哈希表来缓存，使用Map来存储，n为 key。
+
+```js
+function fibonacci(n) {
+  const m = new Map();
+  function fn(x) {
+    if (x <= 0) return 0;
+    if (x === 1) return 1;
+
+    if (m.has(x)) {
+      return m.get(x);
+    }
+    const v = fn(x-1) + fn(x-2);
+    m.set(x, v);
+    return v;
+  }
+
+  return fn(n);
+}
+
+// fibonacci(10);
+// 55
+```
+
+> 比较一下时间
+
+```js
+console.time('map/slow');
+fibonacci(20);
+console.timeEnd('map/slow');
+// 100的时候已经把我的浏览器卡死了
+```
+
+![差距](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/fib_map.jpg)
+
+> 提问：能否继续优化了呢？
+
+
