@@ -70,4 +70,38 @@ console.timeEnd('map/slow');
 
 > 提问：能否继续优化了呢？
 
+其实我们并不一定必须自顶向下做递归运算，我们可以尝试自下向上的方式，为什么呢？举个例子，f(3) = f (2) + f(1), f(4) = f(f3) + f(2), f(3)依赖f(1)和f(2)的值，f(4)依赖f(3)和f(2)的值，看的出来，到了了f(4)的时候，后面的运算都不需要用到f(1)了，自下而上以后我们每次运算只需要保留前面的两个值就好了，代码如下：
 
+```js
+function fibonacci(n) {
+  if (n <= 0) return 0;
+  if (n === 1) return 1;
+
+  let a = 0;
+  let b = 1;
+  let t = 0;
+
+  for (let i = 2; i <= n; i++) {
+    t = a + b;
+    a = b;
+    b = t;
+  }
+
+  return t;
+}
+// fibonacci(10);
+// 55
+```
+
+>比较一下性能
+
+```js
+console.time('a/b');
+fibonacci(1000);
+console.timeEnd('a/b');
+// 性能都不错，用10000测试
+```
+
+![差距](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/fib_best.jpg)
+
+到此为止，性能基本上提高了非常多了
