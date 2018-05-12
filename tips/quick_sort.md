@@ -20,10 +20,8 @@
 function compare(a, b){
   return a-b;
 }
-function swap(arr, s, e){
-  var tmp = arr[s];
-  arr[s] = arr[e];
-  arr[e] = tmp;
+function swap(array, a, b) {
+  [array[a], array[b]] = [array[b], array[a]];
 }
 ```
 
@@ -111,3 +109,46 @@ function swap(arr, s, e){
                   .concat([array[0]])
                   .concat(qSort(array.slice(1).filter(e => compare(e, array[0]) <= 0),compare)))
   ```
+
+4. 教科书快排(摘自 学习javascript数据结构和算法)
+
+```js
+function partition(array, left, right) {
+  const pivot = array[Math.floor((right + left) / 2)];
+  let i = left,
+      j = right;
+
+  while (i <= j) {
+    while (compare(array[i], pivot) < 0) {
+      i++;
+    }
+    while (compare(array[j], pivot) > 0) {
+      j--;
+    }
+    if (i <= j) {
+      swap(array, i, j);
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+
+function quick(array, left, right) {
+  let index;
+  if (array.length > 1) {
+    index = partition(array, left, right);
+    if (left < index - 1) {
+      quick(array, left, index - 1);
+    }
+    if (index < right) {
+      quick(array, index, right);
+    }
+  }
+  return array;
+}
+
+function quickSort(array) {
+  return quick(array, 0, array.length - 1);
+};
+```
