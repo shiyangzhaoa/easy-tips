@@ -7,3 +7,4 @@
 * [斐波那契数列](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/fibonacci.md)
 * [创建一个值为下标、长度为100的数组](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/create_arr.md)
 * [求一个页面有多少dom节点](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/dom_count.md)
+* [destructuringArray([1, [2, 3], 4], '[a, [b ], c]') => {a: 1, b: 2, c: 3}, 无意中看到的，听说是阿里的面试题？](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/destructuring_array.md)
