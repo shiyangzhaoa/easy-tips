@@ -27,5 +27,5 @@ function fibonacci(n) {
 ```
 
 乍看起来貌似没什么问题，仔细观察还是会发现问题的，打个比分，求f(10)，f(10) = f(9) + f (8), f(9) = f(8) + f(7);问题暴露出来了，我在求f(10)的时候球了一次f(8)，求f(9)的时候又求了一次f(8)，有图表示是这样的：
-![图](https://github.com/shiyangzhaoa/easy-tips/img/fibonacci.jpg)
+![图](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/fibonacci.jpg)
 既然我在求f(9)的时候已经算了一遍f(8)的值，为何还要再在求f(10)的时候再算一遍f(8)，这一看就很不合理。
