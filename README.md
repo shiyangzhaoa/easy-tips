@@ -9,3 +9,5 @@
 * [求一个页面有多少dom节点](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/dom_count.md)
 * [destructuringArray([1, [2, 3], 4], '[a, [b ], c]') => {a: 1, b: 2, c: 3}, 无意中看到的，听说是阿里的面试题？](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/destructuring_array.md)
 * [求对象最大值的属性 {a: 1, b: 2, c: 3, d: 3} => 属性为c,值为3](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/max_prop.md)
+* [实现ES6字符模版](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/str_tmp.md)
+* [一些小的tips](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/tips.md)
