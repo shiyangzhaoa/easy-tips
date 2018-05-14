@@ -15,10 +15,6 @@ document.querySelectorAll('*').length;
 
 ```js
 const getChildren = (node) => {
-  if (!node.children.length) {
-    return [];
-  }
-
   return Array.from(node.children).reduce((acc, cur) => cur.children.length
     ? acc.concat(cur, getChildren(cur))
     : acc.concat(cur)
