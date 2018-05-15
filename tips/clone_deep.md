@@ -18,6 +18,8 @@ const cloneDeep = (obj) => {
       return new Date(obj);
     case '[object Boolean]':
       return new Boolean(obj);
+    case '[object String]':
+      return new String(obj);
     default:
       return Object.entries(obj).reduce(
         (acc, [key, value]) => Object.assign(acc, {[key]: cloneDeep(value)}),
@@ -30,5 +32,5 @@ const cloneDeep = (obj) => {
 const a = [{a: 3}, /ff/, new Date(), [], new Boolean(true)];
 const b = cloneDeep(a);
 console.log(b, a[0] === b[0], a[1] === b[1], a[2] === b[2], a[3] === b[3], a[4] === b[4]);
-// [{…}, /ff/, Tue May 15 2018 14:57:47 GMT+0800 (CST), Array(0)] false false false false false false
+// [{…}, /ff/, Tue May 15 2018 14:57:47 GMT+0800 (CST), Array(0), Boolean] false false false false false false
 ```

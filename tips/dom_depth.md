@@ -14,21 +14,20 @@ const getDomDepth = (node) => {
     return 0;
   }
 
-  let i = 1;
-  let arr = [];
-  let t = 0;
+  let m = 1;
 
-  return (function fn(d) {
+  return (function fn(d, i = 1) {
     return Array.from(d.children).reduce((acc, cur) => {
       if (cur.children.length) {
         i++;
-        fn(cur);
+        fn(cur, i);
       }
-      if (i > t) {
-        t = i;
+
+      if (m < i) {
+        m = i;
       }
-      i = 1;
-      return t;
+
+      return m;
     })
   })(node)
 }
