@@ -32,7 +32,7 @@
   const flatten = (arr, depth = 1)  => arr.reduce((a, b) => {
     let i = 1;
     if (Array.isArray(b) && i < depth) {
-      depth++;
+      i++;
       return a.concat(flatten(b));
     }
     return a.concat(b);
@@ -48,7 +48,7 @@
     return this.reduce((a, b) => {
       let i = 1;
       if (Array.isArray(b) && i < depth) {
-        depth++;
+        i++;
         return a.concat(flatten(b));
       }
       return a.concat(b);
