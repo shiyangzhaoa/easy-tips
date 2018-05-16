@@ -30,6 +30,8 @@ const getDomStructure = (node) => {
 }
 // 晕晕晕，手头还没笔。回去写...怎么回溯，脑壳疼,我真是SB！！！这个也想半天
 
-// 试试掘金的, $0为<html>
+// 试试掘金的网页, $0为<html>
 // getDomStructure($0);
 ```
+
+![dang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/dom_structure.png)
