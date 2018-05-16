@@ -20,6 +20,8 @@ const cloneDeep = (obj) => {
       return new Boolean(obj);
     case '[object String]':
       return new String(obj);
+    case '[object Number]':
+      return new Number(obj);
     default:
       return Object.entries(obj).reduce(
         (acc, [key, value]) => Object.assign(acc, {[key]: cloneDeep(value)}),
