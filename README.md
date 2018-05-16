@@ -1,5 +1,7 @@
 ## 一些小的知识点
 
+![laopo](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/laopo.jpg)
+
 * [几个版本的快速排序](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/quick_sort.md)
 * [查找数组重复项](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/arr_same.md)
 * [扁平化数组](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/flatten.md)

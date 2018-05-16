@@ -99,7 +99,7 @@ function fibonacci(n) {
 console.time('a/b');
 fibonacci(1000);
 console.timeEnd('a/b');
-// 性能都不错，用10000测试
+// 性能都不错，用1000测试
 ```
 
 ![差距](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/fib_best.jpg)
