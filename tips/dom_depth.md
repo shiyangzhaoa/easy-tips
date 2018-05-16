@@ -23,4 +23,4 @@ const getDomDepth = (node) => {
 }
 ```
 
-![pang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_dom_depth.jpg)
+![pang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_dom_max_depth.jpg)
