@@ -31,4 +31,4 @@ const getDomStructure = (node) => {
 
 // getDomStructure(document)
 ```
-![dang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/dom_structure.jpg)
+![dang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/dom_structure.png)
