@@ -14,7 +14,7 @@ const getDomDepth = (node) => {
       if (n.children.length) {
         fn(n, m);
       } else {
-        if (max < m) max = m;
+        if (max < m) max = ++m;
       }
     })
   }(node, 0);
@@ -23,4 +23,4 @@ const getDomDepth = (node) => {
 }
 ```
 
-![pang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_dom_max_depth.jpg)
+![pang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_dom_max_depth.png)
