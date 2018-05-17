@@ -18,10 +18,11 @@ const getDomStructure = (node) => {
 
   void function fn(d, t) {
     Array.from(d.children).forEach(n => {
+      const _t = t ? `${t}->${n.tagName}` : `${d.tagName}->${n.tagName}`;
       if (n.children.length) {
-        fn(n, t ? `${t}->${n.tagName}` : `${d.tagName}->${n.tagName}`);
+        fn(n, _t);
       } else {
-        arr.push(t ? `${t}->${n.tagName}` : `${d.tagName}->${n.tagName}`);
+        arr.push(_t);
       }
     })
   }(node);
