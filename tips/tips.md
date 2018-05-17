@@ -21,3 +21,11 @@
 
   // 12
   ```
+
+3. 关于 reduce 的使用，<code>arr.reduce</code>当arr不确定是否为空数组时，一定给定初始值
+
+  ```js
+  [].reduce(() => {});
+  ```
+
+  ![pang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/reduce_init.png)

@@ -4,7 +4,8 @@
 
 ```js
 Object.entries({a: 1, b: 2, c: 3, d: 3}).reduce(
-  ([accK, accV], [curK, curV]) => accV >= curV ? [accK, accV] : [curK, curV]
+  ([accK, accV], [curK, curV]) => accV >= curV ? [accK, accV] : [curK, curV],
+  [],
 );
 
 // ["c", 3]
