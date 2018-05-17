@@ -16,4 +16,5 @@
 * [求对象最大值的属性 {a: 1, b: 2, c: 3, d: 3} => 属性为c,值为3](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/max_prop.md)
 * [实现ES6字符模版](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/str_tmp.md)
 * [实现一个lazyMan](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/lazy_man.md)
+* [一个数组和为某值的成员](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/item_sum.md)
 * [一些额外的tips](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/tips.md)
