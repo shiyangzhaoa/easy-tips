@@ -14,10 +14,10 @@ const getDomDepth = (node) => {
       if (n.children.length) {
         fn(n, m);
       } else {
-        if (max < m) max = ++m;
+        if (max < m) max = m;
       }
     })
-  }(node, 0);
+  }(node, 1);
 
   return max;
 }
