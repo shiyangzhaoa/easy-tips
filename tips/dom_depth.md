@@ -6,7 +6,7 @@
 
 ```js
 const getDomDepth = (node) => {
-  let max = -1;
+  let max = 1;
 
   void function fn(d, m) {
     m++;

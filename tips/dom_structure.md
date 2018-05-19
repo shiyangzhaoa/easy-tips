@@ -11,7 +11,7 @@ document......
 ```js
 const getDomStructure = (node) => {
   if (!node.children.length) {
-    return 0;
+    return [node.tagName];
   }
 
   const arr = [];
