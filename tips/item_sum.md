@@ -2,24 +2,36 @@
 
 [1, 2, 3, 4, 5, 6] (实际情况乱序)中和为7的成员集合 => [[1, 2, 4], [1, 6]...]
 
-> 说实话，求东西都是一个道理，递归，掌握了这些东西其实就很简单了
+> 这个，真不简单，来自老大的代码
 
 ```js
-const getSpecItem = (arr, num) => {
-  const items = [];
+function getSpecItem(arr, target) {
+  const stack = [];
+  const result = [];
+  arr.sort((a, b) => b - a);
 
-  void function fn(_arr, x) {
-    const sum = x.reduce((acc, next) => acc + next, 0);
-    if (Array.isArray(_arr) && sum < num) {
-      
-      })
-    } else {
-      
+  let index = 0, oldIndex;
+
+  while (true) {
+    const sum = stack.reduce((prev, cur) => prev + cur.value, 0);
+    if (sum >= target) {
+      if (sum === target) {
+        result.push(stack.map(x => x.value));
+      }
+      do {
+        index = stack.pop().index + 1;
+      } while (index >= arr.length);
+
     }
-  }(arr, []);
-
-  return items;
+    stack.push({ index, value: arr[index] });
+    if (index >= arr.length) {
+      index = stack[0].index;
+      if (index === arr.length - 1) return result;
+      stack.length = 0;
+    }
+    ++index;
+  }
 }
 
-// 回去看
+getSpecItem([1, 2, 3, 5, 7], 8);
 ```
