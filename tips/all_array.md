@@ -9,9 +9,9 @@ const getAll = (arr) => {
       if (a.length > 1) {
         const _a = [].concat(a);
         _a.splice(i, 1)
-        fn(_a, cur ? cur + '->' + v : v)
+        fn(_a, cur ? cur + '-' + v : v)
       } else {
-        tArr.push(cur ? cur + '->' + v : v);
+        tArr.push(cur ? cur + '-' + v : v);
       }
     });
   }(arr, '');
@@ -22,4 +22,4 @@ const getAll = (arr) => {
 // getAll([1, 2, 3]);
 ```
 
-![getAll](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_all.jpg)
+![getAll](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_all.png)
