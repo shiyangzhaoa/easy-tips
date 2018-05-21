@@ -17,4 +17,5 @@
 * [实现ES6字符模版](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/str_tmp.md)
 * [实现一个lazyMan](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/lazy_man.md)
 * [一个数组和为某值的成员](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/item_sum.md)
+* [一组数所有的排列情况，例如: [1, 2] => ['1-2', '2-1']](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/all_array.md)
 * [一些额外的tips](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/tips.md)
