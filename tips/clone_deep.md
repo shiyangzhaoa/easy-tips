@@ -13,15 +13,11 @@ const cloneDeep = (obj) => {
         [],
       );
     case '[object RegExp]':
-      return new RegExp(obj);
     case '[object Date]':
-      return new Date(obj);
     case '[object Boolean]':
-      return new Boolean(obj);
     case '[object String]':
-      return new String(obj);
     case '[object Number]':
-      return new Number(obj);
+      return new obj.constructor(obj)
     default:
       return Object.entries(obj).reduce(
         (acc, [key, value]) => Object.assign(acc, {[key]: cloneDeep(value)}),
