@@ -23,3 +23,10 @@
   ```js
   [...new Set(arr)]
   ```
+  
+  3. 使用数组filter方法 结合2的去重
+  
+  ```js
+  const find_dup = arr => [...new Set(arr.filter(i => arr.indexOf(i) !== arr.lastIndexOf(i)))]
+```
+  
