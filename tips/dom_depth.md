@@ -1,6 +1,6 @@
 # 求dom树的最大深度
 
-> 上面我们已经遍历了所有情况，求最大深度就可以直接根据上面求的数组就可以得到，不过肯定不能这样求
+> 上面我们已经遍历了所有情况，求最大深度就可以直接根据上面求的数组就可以得到，不过肯定不能这样求(下面这种写法不对，通过了 length 判断是不行的，因为受 tagName 长度影响)
 
 ![dang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/dom_max_depth.png)
 
