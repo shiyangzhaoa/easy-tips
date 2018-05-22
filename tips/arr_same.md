@@ -18,22 +18,13 @@
   // [4, 5, 1, "19"]
   ```
 
-> 改进，上面写的太烂了，一直没改
+> 使用Map
 
 ```js
-const find_dup = (arr) => {
+const find_dup = arr => {
   const m = new Map();
-  const a = [];
 
-  arr.forEach(v => {
-    if (m.has(v)) {
-      a.push(v);
-    } else {
-      m.set(v, 1);
-    }
-  });
-
-  return a;
+  return arr.reduce((acc, cur) => m.has(cur) ? acc.concat(cur) : m.set(cur, 1) && acc, []);
 }
 ```
 
