@@ -23,3 +23,16 @@ const getAll = (arr) => {
 ```
 
 ![getAll](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/get_all.png)
+
+> 老大版本
+
+```js
+function* permutate(arr, length = arr.length) {
+  if (!length) return yield arr;
+  for (let i = 0; i < length; ++i) {
+    yield* permutate([...arr.slice(0, i), ...arr.slice(i + 1), arr[i]], length - 1);
+  }
+}
+
+console.log(...[...permutate([1,2,3])].map(x => x.join('-')));
+```

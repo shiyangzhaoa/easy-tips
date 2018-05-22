@@ -2,5 +2,5 @@
 
 ```js
 // 这个刚开始有点蠢了，脑子没转过来
-const sortByDiff = (arr, num) => arr.sort((a, b) => Math.abs(a - num) - Math.abs(b - num))
+const sortByDiff = (arr, num) => Math.abs(a - num) - Math.abs(b - num))
 ```
