@@ -58,3 +58,11 @@
   // [1, [2, 3, [4]], 5].flatten();
   // [1, 2, 3, [4], 5]
   ```
+
+> 或者这样(老大版本)
+
+```js
+function flatten(arr) {
+  return Array.isArray(arr) ? [].concat(...arr.map(flatten)) : arr;
+}
+```
