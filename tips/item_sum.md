@@ -43,7 +43,7 @@ getSpecItem([1, 2, 3, 5, 7], 8);
 function getSpecItem(arr, num) {
   const tArr = [];
   const sArr = arr.sort((a, b) => b - a);
-  if (sArr[0] > num) {
+  if (sArr[sArr.length] > num) {
     return [];
   }
 
