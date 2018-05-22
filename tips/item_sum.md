@@ -61,8 +61,7 @@ function getSpecItem(arr, num) {
         }
       } else {
         if (sum + v === num) {
-          cur.push(v);
-          tArr.push(cur);
+          tArr.push(cur.concat(v));
         }
       }
     });
