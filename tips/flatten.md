@@ -66,3 +66,11 @@ function flatten(arr) {
   return Array.isArray(arr) ? [].concat(...arr.map(flatten)) : arr;
 }
 ```
+
+> 带有 depth 版本(老大)
+
+```js
+function flatten(arr, deep = Infinity) {
+  return deep && Array.isArray(arr) ? [].concat(...arr.map(x => flatten(x, deep - 1))) : arr;
+}
+```
