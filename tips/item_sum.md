@@ -35,3 +35,39 @@ function getSpecItem(arr, target) {
 
 getSpecItem([1, 2, 3, 5, 7], 8);
 ```
+
+> 自己写
+
+```js
+// 看小姐姐跳舞入迷了，忘记这事了，有 BUG，明天看
+function getSpecItem(arr, num) {
+  const tArr = [];
+  const sArr = arr.sort((a, b) => b - a);
+  if (sArr[0] > num) {
+    return [];
+  }
+
+  void function fn(a, cur, sum) {
+    a.forEach((v, i) => {
+      if (a.length > 1 && i < a.length - 1) {
+        if (sum + v < num) {
+          const _a = a.slice(i + 1, a.length);
+          fn(_a, cur.concat(v), sum + v);
+        } else if (sum + v > num) {
+          const _a = a.slice(i + 2, a.length);
+          fn(_a, cur, sum);
+        } else {
+          tArr.push(cur.concat(v));
+        }
+      } else {
+        if (sum + v === num) {
+          cur.push(v);
+          tArr.push(cur);
+        }
+      }
+    });
+  }(sArr, [], 0)
+
+  return tArr;
+}
+```
