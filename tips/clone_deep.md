@@ -33,7 +33,7 @@ console.log(b, a[0] === b[0], a[1] === b[1], a[2] === b[2], a[3] === b[3], a[4] 
 // [{…}, /ff/, Tue May 15 2018 14:57:47 GMT+0800 (CST), Array(0), Boolean] false false false false false
 ```
 
-> 补充版本,性能较高
+> 补充版本,性能较高(老大版本)
 
 ```js
 function deepClone(obj) {
