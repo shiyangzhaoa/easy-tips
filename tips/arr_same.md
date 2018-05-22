@@ -21,11 +21,8 @@
 > 使用Map
 
 ```js
-const find_dup = arr => {
-  const m = new Map();
-
-  return arr.reduce((acc, cur) => m.has(cur) ? acc.concat(cur) : m.set(cur, 1) && acc, []);
-}
+const find_dup = arr =>
+  ((m) => arr.reduce((acc, cur) => m.has(cur) ? acc.concat(cur) : m.set(cur, 1) && acc, []))(new Map())
 ```
 
   2. 补充，去重可以用set
