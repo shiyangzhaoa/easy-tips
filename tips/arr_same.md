@@ -18,6 +18,25 @@
   // [4, 5, 1, "19"]
   ```
 
+> 改进，上面写的太烂了，一直没改
+
+```js
+const find_dup = (arr) => {
+  const m = new Map();
+  const a = [];
+
+  arr.forEach(v => {
+    if (m.has(v)) {
+      a.push(v);
+    } else {
+      m.set(v, 1);
+    }
+  });
+
+  return a;
+}
+```
+
   2. 补充，去重可以用set
 
   ```js
