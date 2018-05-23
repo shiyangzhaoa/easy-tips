@@ -5,33 +5,42 @@
 > 这个，真不简单，来自老大的代码
 
 ```js
+/**
+ * @param {number[]} arr
+ * @param {number} target
+ */
 function getSpecItem(arr, target) {
   const stack = [];
   const result = [];
   arr.sort((a, b) => b - a);
 
   let index = 0, oldIndex;
-
+  
   while (true) {
-    const sum = stack.reduce((prev, cur) => prev + cur.value, 0);
+    const sum = stack.reduce((prev, curr) => prev + curr.value, 0);
     if (sum >= target) {
       if (sum === target) {
+        console.log(stack.map(x => x.value));
         result.push(stack.map(x => x.value));
       }
       do {
         index = stack.pop().index + 1;
       } while (index >= arr.length);
-
     }
     stack.push({ index, value: arr[index] });
     if (index >= arr.length) {
-      index = stack[0].index;
-      if (index === arr.length - 1) return result;
-      stack.length = 0;
+      do {
+        if (stack.length < 2) return result;
+        stack.length -= 1;
+        index = stack.pop().index + 1;
+        stack.push({ index, value: arr[index] });
+      } while (index + 1 >= arr.length);
     }
     ++index;
   }
 }
+
+console.log(getSpecItem([1, 2, 3, 4,5,6,7,8,9], 17).length);
 
 getSpecItem([1, 2, 3, 5, 7], 8);
 ```
