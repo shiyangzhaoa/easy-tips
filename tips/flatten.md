@@ -30,10 +30,8 @@
 
   ```js
   const flatten = (arr, depth = 1)  => arr.reduce((a, b) => {
-    let i = 1;
-    if (Array.isArray(b) && i < depth) {
-      i++;
-      return a.concat(flatten(b));
+    if (Array.isArray(b) && depth - 1) {
+      return a.concat(flatten(b, depth - 1));
     }
     return a.concat(b);
   }, []);
@@ -46,10 +44,8 @@
   // 你也可以这样（逃
   Array.prototype.flatten = function(depth = 1) {
     return this.reduce((a, b) => {
-      let i = 1;
-      if (Array.isArray(b) && i < depth) {
-        i++;
-        return a.concat(flatten(b));
+        if (Array.isArray(b) && depth - 1) {
+        return a.concat(flatten(b, depth - 1));
       }
       return a.concat(b);
     }, []);

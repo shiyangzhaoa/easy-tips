@@ -63,7 +63,7 @@ function getSpecItem(arr, num) {
           const _a = a.slice(i + 1, a.length);
           fn(_a, cur.concat(v), sum + v);
         } else if (sum + v > num) {
-          const _a = a.slice(i + 2, a.length);
+          const _a = a.slice(i + 1, a.length);
           fn(_a, cur, sum);
         } else {
           tArr.push(cur.concat(v));
