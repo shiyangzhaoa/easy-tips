@@ -34,3 +34,24 @@ const getChildren = (node) => {
 ![biu](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/dom_count.jpg)
 
 哎嘿嘿，是不是觉得这样就有趣多了～
+
+> 补充：添加中序遍历，挖坑不填，非好汉也
+```js
+const getChildren = (node) => {
+  const stack = [];
+  stack.push(...node.children);
+  var i = 0;
+
+  while (i < stack.length) {
+    if (stack[i].children.length) {
+      stack.push(...stack[i].children);
+    }
+
+    i++;
+  }
+
+  return stack;
+}
+```
+
+两者排序后的结构有一点点不一样，分别对应深度和广度
