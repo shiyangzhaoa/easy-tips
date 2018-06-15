@@ -40,7 +40,7 @@ const getChildren = (node) => {
 const getChildren = (node) => {
   const stack = [];
   stack.push(...node.children);
-  var i = 0;
+  let i = 0;
 
   while (i < stack.length) {
     if (stack[i].children.length) {
