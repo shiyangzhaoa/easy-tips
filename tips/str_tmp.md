@@ -21,6 +21,6 @@ function format(str, obj) {
 trim(绝对不是最优解)
 
 ```js
-' fdsf '.replace(/^\s*/, '').replace(/\s*$/, '');
+' fdsf '.replace(/^[\s]*|[\s]*$/g, '');
 // 'fdsf'
 ```
