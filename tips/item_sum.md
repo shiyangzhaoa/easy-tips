@@ -79,3 +79,4 @@ function getSpecItem(arr, num) {
   return tArr;
 }
 ```
+> 这块的思路不对，我晚点补充，最近刷了 LeetCode 的求 NSum 总结的
