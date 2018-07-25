@@ -70,3 +70,24 @@ function flatten(arr, deep = Infinity) {
   return deep && Array.isArray(arr) ? [].concat(...arr.map(x => flatten(x, deep - 1))) : arr;
 }
 ```
+
+> generator 版本
+
+  ```js
+  const flatten = (arr) => {
+    return [...(
+      function* flatten(arr) {
+        for(let i = 0, l = arr.length; i < l;i++) {
+          if (Array.isArray(arr[i])) {
+            yield* flatten(arr[i]);
+          } else {
+            yield arr[i]
+          }
+        }
+      }
+    )(arr)]
+  }
+  
+  flatten([1, [2, [3, [4]]]])
+  // [1, 2, 3, 4]
+  ```
