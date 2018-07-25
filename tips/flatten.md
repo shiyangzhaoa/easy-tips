@@ -76,10 +76,10 @@ function flatten(arr, deep = Infinity) {
   ```js
   const flatten = (arr) => {
     return [...(
-      function* flatten(arr) {
+      function* fn(arr) {
         for(let i = 0, l = arr.length; i < l;i++) {
           if (Array.isArray(arr[i])) {
-            yield* flatten(arr[i]);
+            yield* fn(arr[i]);
           } else {
             yield arr[i]
           }
