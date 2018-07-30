@@ -29,3 +29,13 @@
   ```
 
   ![pang](https://github.com/shiyangzhaoa/easy-tips/blob/master/img/reduce_init.png)
+  
+4. 千分位
+  ```js
+  // 1
+  str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  // 2
+  while (/(\d+)(\d{3})/.test(str.toString())) {
+    val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+  }
+  ```
