@@ -10,7 +10,7 @@ const isOver = t => t === 'over';
 
 const range = (start, end) => () => start < end ? start++ : 'over';
 
-cosnt map = (f, cb) => {
+const map = (f, cb) => {
   let i = f();
   return () => !isOver(i) ? cb(i, i = f()) : i;
 }
