@@ -8,14 +8,14 @@
 // 处理 0
 const isOver = t => t === 'over';
 
-var range = (start, end) => () => start < end ? start++ : 'over';
+const range = (start, end) => () => start < end ? start++ : 'over';
 
-function map(f, cb) {
+cosnt map = (f, cb) => {
   let i = f();
   return () => !isOver(i) ? cb(i, i = f()) : i;
 }
 
-function foreach(f, cb) {
+const foreach = (f, cb) => {
   const i = f();
   if (!isOver(i)) {
     cb(i);
