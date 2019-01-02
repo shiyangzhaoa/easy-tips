@@ -80,3 +80,5 @@ function getSpecItem(arr, num) {
 }
 ```
 > 这块的思路不对，我晚点补充，最近刷了 LeetCode 的求 NSum 总结的
+
+> 一直忘记更了, 比较简单粗暴的方法, 复杂度是 n 的 n 次方, 优化一下, 是 n 的 n - 2次方, 具体可以看 LeetCode
