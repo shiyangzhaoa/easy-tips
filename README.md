@@ -19,5 +19,6 @@
 * [一个数组和为某值的成员](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/item_sum.md)
 * [一组数所有的排列情况，例如: [1, 2] => ['1-2', '2-1']](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/all_array.md)
 * [惰性遍历数组, range, map, foreach](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/lazy_array.md)
+* [和为某值的排列组合](https://github.com/shiyangzhaoa/easy-tips/blob/master/sum_by_all.md)
 * [lodash的get](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/get_props.md)
 * [一些额外的tips](https://github.com/shiyangzhaoa/easy-tips/blob/master/tips/tips.md)
