@@ -1,4 +1,4 @@
-# 实现一个lazyMan，掌握Event Loop
+# 实现一个lazyMan, 任务队列
 
 ```js
 const aLazy = new LazyMan('王大锤');
