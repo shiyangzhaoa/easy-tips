@@ -2,7 +2,7 @@
 
 ```js
 const get = (target, path, hold) => {
-  if (typeof path !== 'string' && !Array.isArray(hold)) {
+  if (typeof path !== 'string' && !Array.isArray(path)) {
     return target;
   }
 
