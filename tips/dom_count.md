@@ -35,7 +35,7 @@ const getChildren = (node) => {
 
 哎嘿嘿，是不是觉得这样就有趣多了～
 
-> 补充：添加中序遍历，挖坑不填，非好汉也
+> 补充：广度优先
 ```js
 const getChildren = (node) => {
   const stack = [];
