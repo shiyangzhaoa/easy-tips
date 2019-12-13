@@ -7,7 +7,7 @@ const get = (target, path, hold) => {
   }
 
   let result;
-  const keys = Array.isArray(hold) ? path : path.replace(/\[(\d+)\]/g, '.$1').split('.');
+  const keys = Array.isArray(path) ? path : path.replace(/\[(\d+)\]/g, '.$1').split('.');
   
   try {
     result =  keys.reduce((acc, cur) => acc[cur], target);
