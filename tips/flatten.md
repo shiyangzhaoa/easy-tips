@@ -74,20 +74,17 @@ function flatten(arr, deep = Infinity) {
 > generator 版本
 
   ```js
-  const flatten = (arr) => {
+  Array.prototype.flat = function(depth = 1) {
     return [...(
-      function* fn(arr) {
+      function* fn(arr, d) {
         for(let i = 0, l = arr.length; i < l;i++) {
-          if (Array.isArray(arr[i])) {
-            yield* fn(arr[i]);
+          if (Array.isArray(arr[i]) && d - 1 >= 0) {
+            yield* fn(arr[i], d - 1);
           } else {
             yield arr[i]
           }
         }
       }
-    )(arr)]
+    )(this, depth)]
   }
-  
-  flatten([1, [2, [3, [4]]]])
-  // [1, 2, 3, 4]
   ```
